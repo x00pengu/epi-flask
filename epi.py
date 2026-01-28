@@ -2,9 +2,12 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return "APP 1 Working!"
+
 @app.route('/egress')
 def get_client_ip():
-    # Client's IP (whoever is making the request)
     client_ip = request.remote_addr
     return client_ip
 
